@@ -1,0 +1,19 @@
+{% extends 'store/base.html' %}
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+<div class="flex-container">
+    {% for p in product %}
+    <div class="card" style="width: 18rem;">
+        <img src="{{p.image.url}}" class="card-img-top" alt="{{p.name}}">
+        <div class="card-body">
+          <h5 class="card-title">{{p.name}}</h5>
+          <p class="card-text">Price: ${{p.price}}</p>
+          <a href="#" class="btn btn-primary">add to cart</a>
+        </div>
+      </div>
+    {% endfor %}
+</div>
+{% endblock %}
